@@ -10,6 +10,11 @@ from os import path
 import pandas as pd
 import numpy as np
 
+#17/18: J
+#15/16: I
+#13/14: H -> falta este
+#11/12: G
+
 # The base URL for all NHANES data
 base = "https://wwwn.cdc.gov/Nchs/Nhanes"
 
@@ -19,6 +24,8 @@ demo = [
     ("2017-2018", "DEMO_J.XPT"),
     ("2011-2012", "DEMO_G.XPT"),
     ("2015-2016", "DEMO_I.XPT"),
+    ("2013-2014", "DEMO_H.XPT"),
+    
 ]
 
 # EXAMINATION -------------------------------
@@ -27,6 +34,9 @@ bpx = [
     ("2017-2018", "BPX_J.XPT"),
     ("2011-2012", "BPX_G.XPT"),
     ("2015-2016", "BPX_I.XPT"),
+    ("2013-2014", "BPX_H.XPT"),
+    
+    
 ]
 
 # Body measures files
@@ -34,6 +44,7 @@ bmx = [
     ("2017-2018", "BMX_J.XPT"),
     ("2011-2012", "BMX_G.XPT"),
     ("2015-2016", "BMX_I.XPT"),
+    ("2013-2014", "BMX_H.XPT"),
 ]
 
 # LABORATORY ----------------------
@@ -43,17 +54,24 @@ trigly = [
     ("2017-2018", "TRIGLY_J.XPT"),
     ("2011-2012", "TRIGLY_G.XPT"),
     ("2015-2016", "TRIGLY_I.XPT"),
+    ("2013-2014", "TRIGLY_H.XPT"),
 ]
 
-#Insulina
+#Insulina LBXIN de los datos 2011 y 2012 se encuentra en GLU_G
 ins = [
     ("2017-2018", "INS_J.XPT"),
+    ("2015-2016", "INS_I.XPT"),
+    ("2013-2014", "INS_H.XPT"),
 
 ]
 
-# Glucosa
+# Glucosa a ver que pasa??
 glu = [
     ("2017-2018", "GLU_J.XPT"),
+    ("2011-2012", "GLU_G.XPT"),
+    ("2015-2016", "GLU_I.XPT"),
+    ("2013-2014", "GLU_H.XPT"),
+
 
 ]
 
@@ -62,6 +80,7 @@ hdl = [
     ("2017-2018", "HDL_J.XPT"),
     ("2011-2012", "HDL_G.XPT"),
     ("2015-2016", "HDL_I.XPT"),
+    ("2013-2014", "HDL_H.XPT"),
 ]
 
 
@@ -73,6 +92,7 @@ bpq = [
     ("2017-2018", "BPQ_J.XPT"),
     ("2011-2012", "BPQ_G.XPT"),
     ("2015-2016", "BPQ_I.XPT"),
+    ("2013-2014", "BPQ_H.XPT"),
 ]
 
 # Diabetes data documentation
@@ -80,6 +100,7 @@ diq = [
     ("2017-2018", "DIQ_J.XPT"),
     ("2011-2012", "DIQ_G.XPT"),
     ("2015-2016", "DIQ_I.XPT"),
+    ("2013-2014", "DIQ_H.XPT"),
 ]
 
 # Health condition
@@ -87,6 +108,7 @@ hsq = [
     ("2017-2018", "HSQ_J.XPT"),
     ("2011-2012", "HSQ_G.XPT"),
     ("2015-2016", "HSQ_I.XPT"),
+    ("2013-2014", "HSQ_H.XPT"),
 ]
 
 # Dietary screener questionnaire 
@@ -94,6 +116,7 @@ dbq = [
     ("2017-2018", "DBQ_J.XPT"),
     ("2011-2012", "DBQ_G.XPT"),
     ("2015-2016", "DBQ_I.XPT"),
+    ("2013-2014", "DBQ_H.XPT"),
 ]
 
 # Mental health - Depression
@@ -101,6 +124,7 @@ dpq = [
     ("2017-2018", "DPQ_J.XPT"),
     ("2011-2012", "DPQ_G.XPT"),
     ("2015-2016", "DPQ_I.XPT"),
+    ("2013-2014", "DPQ_H.XPT"),
 ]
 
 #Physical activity
@@ -108,6 +132,7 @@ paq = [
     ("2017-2018", "PAQ_J.XPT"),
     ("2011-2012", "PAQ_G.XPT"),
     ("2015-2016", "PAQ_I.XPT"),
+    ("2013-2014", "PAQ_H.XPT"),
 ]
 
 #Incomes - poverty ratio index
@@ -115,6 +140,7 @@ inq = [
     ("2017-2018", "INQ_J.XPT"),
     ("2011-2012", "INQ_G.XPT"),
     ("2015-2016", "INQ_I.XPT"),
+    ("2013-2014", "INQ_H.XPT"),
 ]
 
 #Sleep disorders
@@ -122,6 +148,7 @@ slq = [
     ("2017-2018", "SLQ_J.XPT"),
     ("2011-2012", "SLQ_G.XPT"),
     ("2015-2016", "SLQ_I.XPT"),
+    ("2013-2014", "SLQ_H.XPT"),
 ]
 
 # Alcohol use
@@ -129,6 +156,7 @@ alq = [
     ("2017-2018", "ALQ_J.XPT"),
     ("2011-2012", "ALQ_G.XPT"),
     ("2015-2016", "ALQ_I.XPT"),
+    ("2013-2014", "ALQ_H.XPT"),
 ]
 
 # Smoking
@@ -136,6 +164,7 @@ smq = [
     ("2017-2018", "SMQ_J.XPT"),
     ("2011-2012", "SMQ_G.XPT"),
     ("2015-2016", "SMQ_I.XPT"),
+    ("2013-2014", "SMQ_H.XPT"),
 ]
 
 # Insurance
@@ -143,6 +172,7 @@ hiq = [
     ("2017-2018", "HIQ_J.XPT"),
     ("2011-2012", "HIQ_G.XPT"),
     ("2015-2016", "HIQ_I.XPT"),
+    ("2013-2014", "HIQ_H.XPT"),
 ]
 
 # Medical questions
@@ -150,6 +180,7 @@ mcq = [
     ("2017-2018", "MCQ_J.XPT"),
     ("2011-2012", "MCQ_G.XPT"),
     ("2015-2016", "MCQ_I.XPT"),
+    ("2013-2014", "MCQ_H.XPT"),
 ]
 
 #19 docs .xpt
@@ -157,7 +188,7 @@ mcq = [
 # Variables to keep
 kvar = ["SEQN", "RIAGENDR", "RIDAGEYR", "DMDEDUC2", "BPXSY1", "BPXDI1", "BMXWT", "BMXBMI", 
 "BMXWAIST", "BMXHT", "LBXTR", "LBXIN", "LBXGLU", "LBDHDD", "BPQ040A", "BPQ030", "BPQ050A", 
-"BPQ090D", "DIQ010", "DID070", "DIQ070", "ALQ130", "HSD010", "DBQ700", "HIQ011", "MCQ080", "MCQ010", 
+"BPQ090D", "DIQ010","DIQ070", "ALQ130", "HSD010", "DBQ700", "HIQ011", "MCQ080", "MCQ010", 
 "MCQ220", "MCQ160m", "MCQ300C", "DPQ020", "DPQ030", "DPQ040", "DPQ050", "PAQ605", "PAQ620", "PAQ635", "PAQ650", "PAQ665", 
 "SMQ020", "INQ020", "INDFMMC", "SLQ050", "SLQ012"
 ]
