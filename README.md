@@ -1,7 +1,7 @@
 # TFM_NHANES
-#Prevalencia de Síndrome Metabólico
+Prevalencia de Síndrome Metabólico
 
-Para considerar que un individuo presenta síndrome metabólico se tienen que dar 3 de estos 5 atributos
+Para considerar que un individuo presenta síndrome metabólico se tienen que dar 3 de estos 5 requisitos
 
 
 
