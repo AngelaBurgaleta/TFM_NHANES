@@ -152,6 +152,7 @@ ms1314['MET_SYM'] = np.select(condiciones_METSYM, opciones_METSYM)
 #PREVALENCIA EN PORCENTAJE
 
 #porcentaje de los que presentan sindrome metabolico
-porcentaje_METSYM_1314 = 100 * ms1314['MET_SYM'].value_counts() / len(ms1314['MET_SYM'])
+#porcentaje_METSYM_1314 = 100 * ms1314['MET_SYM'].value_counts() / len(ms1314['MET_SYM'])
 #conteo de valores
 #ms1314['MET_SYM'].value_counts()
+#ms1314.to_csv('ms1314.csv')

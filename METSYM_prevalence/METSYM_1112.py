@@ -153,3 +153,4 @@ ms1112['MET_SYM'] = np.select(condiciones_METSYM, opciones_METSYM)
 #porcentaje_METSYM_1112 = 100 * ms1112['MET_SYM'].value_counts() / len(ms1112['MET_SYM'])
 #conteo de valores
 #ms1112['MET_SYM'].value_counts()
+#ms1112.to_csv('ms1112.csv')
